@@ -73,6 +73,14 @@ y: Perform a "sticky" search that matches starting at the current position in th
 
 ### Grouping and Capturing
 
+A group is part of a regex pattern enclosed in parenthese () metacharacter. We create a group by placing the regex pattern inside the set of parenthese (and).
+
+Example: (cat) creates a single group containing the letters 'c','a','t'.
+
+Capturing is a wat to treat multiple characters as a single unit. They are craeted by placing the characters to be grouped inside a set of parenthese.
+
+Example: (dog) creates a single group containing the letters "d" "o" and "g".
+
 ### Bracket Expressions
 
 Bracketss indicate a set of characters to match. Any individual character between the brackets will match, and you can also use a hyphen to define a set.
@@ -81,19 +89,38 @@ Example: 'elephant'.match(/[abcd]/) // -> matches 'a'
 ### Greedy and Lazy Match
 
 The quantifiers (\* + {}) are greedy operators, so they expand the match as far as they can through the provided text.
-In order to catch only the div tag we can use a ? to make it lazy
+
+Examples: (\*, +, {n}, {min,}, {0,max}, {min,max})
+
+In order to catch only the div tag we can use a ? to make it lazy.
+
+Examples: (??, \*?, +?, {n}?, {min,}?, {0,max}?, {min,max}?)
 
 ### Boundaries
+
+The word boundaries:
+Before the first character in a string if the first character is a word character.
+After the last character in a string if the last character in a word character.
+Between two characters in a string if one is a word character and the other is not.
+Example: \b, \B
 
 ### Back-references
 
 Back references are used to match the same text preivously matched by a capturing group.
+
+Example: [0-9][-/ ][a-z][-/ ][0-9]
 
 ### Look-ahead and Look-behind
 
 Lookahead asserts that what immediately follows the current position in an uppercase letter.
 
 Lookbehind asserts that what immediately precedes the current position is a lowercase letter.
+
+Examples:
+(?!) - negative lookahead
+(?=) - positive lookahead
+(?<=) - positive lookbehind
+(?<!) - negative lookbehind
 
 ## Author
 
