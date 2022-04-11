@@ -1,10 +1,10 @@
-# Title (replace with your title)
+# Title: Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+This tutorial on regular expressions also known as regex.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+Regular expressions is a pattern that describes a set of strings that matches the pattern. Below is a breakdown of the different regex and examples to better understand the concept of these terms.
 
 ## Table of Contents
 
@@ -26,17 +26,20 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 An anchor is a piece of text which marks the beginning and/or the end of a hypertext link. The text between the opening tag and the closing tag is either the start or destination (or both) of a link.
 
+Examples: ^: anchor to match the beginning of the text
+ $: anchor to match the end of the text
+
 ### Quantifiers
 
 Quantifiers indicate numbers of characters or expressions to match.
-\*, +, ?, x{n}, x{n,}, x{n,m}
+Examples: \*, +, ?, x{n}, x{n,}, x{n,m}
 
 ### OR Operator
 
 ### Character Classes
 
 Character classes distinguish kinds of characters such as, for example, distinguishing between letters and digits.
-Example: \, ., \cX, \d, \D, \f, \n, \r, \s, \S, \t, \v, \w, \W, \0, \xhh, \uhhhh, \uhhhhh, [\b]
+Examples: \, ., \cX, \d, \D, \f, \n, \r, \s, \S, \t, \v, \w, \W, \0, \xhh, \uhhhh, \uhhhhh, [\b]
 
 ### Flags
 
@@ -66,8 +69,14 @@ In order to catch only the div tag we can use a ? to make it lazy
 
 ### Back-references
 
+Back references are used to match the same text preivously matched by a capturing group.
+
 ### Look-ahead and Look-behind
+
+Lookahead asserts that what immediately follows the current position in an uppercase letter. Lookbehind asserts that what immediately precedes the current position is a lowercase letter.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Lisa Jean.
+
+Github link: https://github.com/jeanl87/regex_tutorial.git
