@@ -26,20 +26,38 @@ Regular expressions is a pattern that describes a set of strings that matches th
 
 An anchor is a piece of text which marks the beginning and/or the end of a hypertext link. The text between the opening tag and the closing tag is either the start or destination (or both) of a link.
 
-Examples: ^: anchor to match the beginning of the text
- $: anchor to match the end of the text
+Examples: ^: anchor to match the beginning of the text (^. matches a in abc\ndef)
+$: anchor to match the end of the text (.$ matches f in abc\ndef)
 
 ### Quantifiers
 
 Quantifiers indicate numbers of characters or expressions to match.
 Examples: \*, +, ?, x{n}, x{n,}, x{n,m}
+\*: Match zero or more times
++: Match one or more times
+?: MAtch zero or one times
+{n}: Match exactly n times
+{n,}: Match at least n times
+{n,m}: Match from n to m times
 
 ### OR Operator
 
+You can use the | operator (logical OR) to match characters ir expression of either the left or right of the | operator.
+
+Example: the(t|T) will match either t or T from the input string.
+
 ### Character Classes
 
-Character classes distinguish kinds of characters such as, for example, distinguishing between letters and digits.
-Examples: \, ., \cX, \d, \D, \f, \n, \r, \s, \S, \t, \v, \w, \W, \0, \xhh, \uhhhh, \uhhhhh, [\b]
+Character class is a set of chracters enclised within square brackets. It specifies the characters that will sucessfully match a single character from a given input string.
+
+Examples:
+[abc]: a, b, c (simple class)
+[^abc]: Any character except a, b, or c (negation)
+[a-zA-Z]: a through z, or A through Z, inclusive(range)
+[a-d[m-p]]: a through d, or m through p: [a-dm-p] (union)
+[a-z&&[def]]: d, e, or f (intersection)
+[a-z&&[^bc]]: a through z, except for b and c: [ad-z] (subtraction)
+[a-z&&[^m-p]]: a through z, and not m through p:[a-lq-z] (subtraction)
 
 ### Flags
 
@@ -73,10 +91,12 @@ Back references are used to match the same text preivously matched by a capturin
 
 ### Look-ahead and Look-behind
 
-Lookahead asserts that what immediately follows the current position in an uppercase letter. Lookbehind asserts that what immediately precedes the current position is a lowercase letter.
+Lookahead asserts that what immediately follows the current position in an uppercase letter.
+
+Lookbehind asserts that what immediately precedes the current position is a lowercase letter.
 
 ## Author
 
-My name is Lisa Jean.
+Lisa Jean is a clinical research specialist. She is currently in the last section of fullstack web development bootcamp program for Coloumbia University.
 
 Github link: https://github.com/jeanl87/regex_tutorial.git
